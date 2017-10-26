@@ -1,0 +1,11 @@
+
+server {
+  listen 80;
+
+  location / {
+      proxy_pass ${REDMINE_ISSUES_URL};
+      xslt_stylesheet /redmine-to-pivotal.xslt;
+      xslt_types *;
+  }
+
+}
